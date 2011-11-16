@@ -1,0 +1,60 @@
+<entities>
+    <!-- ************************************************************************************ -->
+    <!--                                    Table AP_DATA_AUDIT                               -->
+    <!-- ************************************************************************************ -->
+    <entity name="net.codjo.log.data.DataAudit" table="AP_DATA_AUDIT" type="data">
+        <description>Table d'audit des donnees</description>
+        <feature>
+            <generate-all/>
+            <handler-requetor id="dataAuditRequetorHandler"/>
+            <doc-structure/>
+            <sql gap="1000000"/>
+            <sql-index>
+                <idx type="primary-key" name-prefix="X1_" clustered="true"/>
+            </sql-index>
+        </feature>
+
+        <primary-key key-generator="IDENTITY">
+            <field name="dataAuditId"/>
+        </primary-key>
+
+        <properties>
+            <field name="dataAuditId" type="big-decimal">
+                <description>Identifiant</description>
+                <sql type="numeric" precision="23" identity="true" required="true"/>
+            </field>
+            <field name="dbTableName" type="string">
+                <description>Nom de la table</description>
+                <sql type="varchar" precision="50" required="false"/>
+            </field>
+            <field name="functionalKey" type="string">
+                <description>Cle</description>
+                <sql type="varchar" precision="1024" required="false"/>
+            </field>
+            <field name="status" type="string">
+                <description>Statut</description>
+                <sql type="varchar" precision="10" in="'INSERT','UPDATE','DELETE'" required="false"/>
+            </field>
+            <field name="userName" type="string">
+                <description>Utilisateur</description>
+                <sql type="varchar" precision="20" required="false"/>
+            </field>
+            <field name="insertionDate" type="java.sql.Timestamp">
+                <description>Date</description>
+                <sql type="timestamp" required="false"/>
+            </field>
+            <field name="dbFieldName" type="string">
+                <description>Nom du champ</description>
+                <sql type="varchar" precision="50" required="false"/>
+            </field>
+            <field name="oldValue" type="string">
+                <description>Ancienne valeur</description>
+                <sql type="varchar" precision="255" required="false"/>
+            </field>
+            <field name="newValue" type="string">
+                <description>Nouvelle valeur</description>
+                <sql type="varchar" precision="255" required="false"/>
+            </field>
+        </properties>
+    </entity>
+</entities>

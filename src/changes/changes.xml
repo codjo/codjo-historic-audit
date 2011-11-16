@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+    <properties>
+        <title>Changes</title>
+    </properties>
+    <body>
+        <release version="2.01" date="2006-08-08"  description="add">
+            <action dev="marcona" type="add">
+                compatibilité datagen 1.20 : ajout de la balise entities
+            </action>
+        </release>
+        <release version="2.00" date="2004-08-04"  description="Compatibilité mad 2.00">
+            <action dev="abouelf" type="add" due-to="SIF">
+                compatibilité mad 2.00 : changement dépendance de mad de la version 1.13 vers la 2.00
+            </action>
+        </release>
+        <release version="1.00" date="2004-06-14"  description="Version initiale">
+            <action dev="abouelf" type="add" due-to="SIF">
+                Ajout d'un constructeur de la Window en precisant la taille
+            </action>
+            <action dev="abouelf" type="add" due-to="SIF">
+                Creation d'une librairie d'audit des donnnes.
+            </action>
+        </release>
+    </body>
+</document>

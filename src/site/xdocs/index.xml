@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<document>
+
+    <properties>
+        <title>codjo-historic-audit</title>
+    </properties>
+
+    <body>
+        <section name="codjo-historic-audit">
+            <p>
+                codjo-historic-audit permet  de gerer l'audit de tables de la maniere suivante :
+                chaque insertion, supression et modification de champ cree un enregistrement
+                dans la table des logs avec les informations de base (date, user ...) mais aussi
+                le champ modifie, la cle fonctionnelle utilisee et eventuellement la nouvelle et
+                l'ancienne valeur du champ.
+            </p>
+            <source>
+            Utilisation
+            <![CDATA[
+
+	1 - declarer la reference a codjo-historic-audit-common-def
+    		dans la structure de l'appli.
+    		 ex:
+    		   <!ENTITY dataAuditDef  SYSTEM "@codjo-historic-audit:codjo-historic-audit-common-def@">
+    		   ou bien
+            <include name="@codjo-historic-audit:codjo-historic-audit-common-def@"/> a partir
+             de la version 2.21
+
+
+
+	2 - inserer la balise <historic-audit-trail> dans les entity des tables concernees :
+		- L'attribut functionalKey correspond a la clé fonctionnelle permettant 
+		    d'identifier de maniere unique les lignes modifiees, supprimees ou ajoutee.
+    		- L'attribut auditClass contient le nom du valueObject da la table d'Audit.
+    
+		    ex :
+		    <feature>
+		        <generate-all/>
+		        <historic-audit-trail functionalKey="operationNumber,sellOperationNumber"
+		                          auditClass="net.codjo.log.data.DataAudit"  />
+		        <doc-structure/>
+		     <audit-trail/>      
+		    </feature>
+
+
+	3 - faire dependre le client de  : codjo-historic-audit-gui pour pouvoir utiliser
+	    l'ecran liste et detail de la table des logs (AP_DATA_AUDIT)
+
+]]>
+            </source>
+        </section>
+    </body>
+</document>

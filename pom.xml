@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+     | POM Relationships
+     -->
+
+    <parent>
+        <groupId>net.codjo.pom</groupId>
+        <artifactId>codjo-pom-library</artifactId>
+        <version>SNAPSHOT</version>
+    </parent>
+    <groupId>net.codjo.historic-audit</groupId>
+    <artifactId>codjo-historic-audit</artifactId>
+    <version>3.8-SNAPSHOT</version>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>net.codjo.historic-audit</groupId>
+                <artifactId>codjo-historic-audit-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--
+     | Build Settings
+     -->
+
+    <packaging>pom</packaging>
+    <modules>
+        <module>codjo-historic-audit-gui</module>
+        <module>codjo-historic-audit-server</module>
+    </modules>
+
+    <!--
+    | Project Information
+    -->
+
+    <name>Lib &gt; Historic-Audit</name>
+    <description>
+        Permet d'effectuer un audit des données sur la table courante (insertion, modification, suppression).
+    </description>
+    <inceptionYear>2004</inceptionYear>
+
+    <!--
+    | Environment Information
+    -->
+
+    <scm>
+        <connection>scm:git:https://github.com/codjo/codjo-historic-audit.git</connection>
+        <developerConnection>scm:git:https://github.com/codjo/codjo-historic-audit.git</developerConnection>
+        <url>https://github.com/codjo/codjo-historic-audit</url>
+    </scm>
+
+</project>

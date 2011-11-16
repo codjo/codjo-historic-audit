@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<project name="historic-audit">
+    <title>Audit des Donnees avec historisation</title>
+    <body>
+        <menu name="Overview">
+            <item name="Front Page" href="/index.html"/>
+            <item name="Historique" href="/changes-report.html"/>
+        </menu>
+    </body>
+</project>
